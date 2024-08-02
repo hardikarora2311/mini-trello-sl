@@ -86,6 +86,14 @@ const TaskDetailsPage = () => {
           ))}
         </select>
       </div>
+      <div className="mb-4">
+        <label className="block mb-2">Color</label>
+        <input
+          type="color"
+          value={task.color}
+          onChange={(e) => setTask({ ...task, color: e.target.value })}
+        />
+      </div>
       <div className="flex justify-between">
         <button
           onClick={() => handleUpdate(task)}

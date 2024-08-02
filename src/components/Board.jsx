@@ -9,22 +9,68 @@ const Board = () => {
   useEffect(() => {
     const defaultColumns = [
       {
-        id: "notstarted",
-        title: "Not started",
-        color: "bg-pink-200",
-        tasks: [],
+        id: "design",
+        title: "Design",
+        tasks: [
+          {
+            color: "#ecbb09",
+            id: 1,
+            title:
+              "Old fashioned recipe for preventing allergies and chemical sensitivities",
+          },
+          {
+            color: "#ec3609",
+            id: 2,
+            title: "Home business advertising ideas",
+            description:
+              "Successful businesses know the importance of building and maintaining good working.",
+          },
+          {
+            color: "#101de0",
+            id: 7,
+            title: "Cosmetic surgery abroad making the right choice",
+          },
+        ],
       },
       {
-        id: "inprogress",
-        title: "In progress",
-        color: "bg-yellow-200",
-        tasks: [],
+        id: "protip",
+        title: "Protip",
+        tasks: [
+          {
+            color: "#0f1780",
+            id: 3,
+            title:
+              "Old fashioned recipe for preventing allergies and chemical sensitivities",
+          },
+          {
+            color: "#1bc55c",
+            id: 4,
+            title:
+              "Unmatched toner cartridge quality 20 less than oem priceUnmatched toner cartridge quality 20 less than oem price",
+            description:
+              "Why read motivational sayings? For motivation! You might need a bit, if you can use last year’s list of goals this year because it’s as good as new.",
+          },
+        ],
       },
       {
-        id: "completed",
-        title: "Completed",
-        color: "bg-green-200",
-        tasks: [],
+        id: "trello",
+        title: "Trello",
+        tasks: [
+          {
+            color: "#1407d5",
+            id: 5,
+            title: "Types of paper in catalog printing",
+            description:
+              "Branding is no longer simply about visual appeal (or the cherry in the apple pie example, as given in my earlier article).",
+          },
+          {
+            color: "#fd6944",
+            id: 6,
+            title: "There is no competition",
+            description:
+              "This article is floated online with an aim to help you find the best dvd printing solution.",
+          },
+        ],
       },
     ];
     const loadColumns = () => {
@@ -105,7 +151,7 @@ const Board = () => {
   };
 
   return (
-    <div className="p-16 h-[90vh]">
+    <div className="p-16">
       <h1 className="text-4xl font-bold mb-8 text-center">Mini Trello</h1>
       <div className="flex space-x-4">
         {columns.map((column) => (

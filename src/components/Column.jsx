@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Task from "./Task";
+import { Ellipsis } from "lucide-react";
 
 const Column = ({ column, onAddTask, onMoveTask, onTaskClick }) => {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
@@ -33,31 +34,27 @@ const Column = ({ column, onAddTask, onMoveTask, onTaskClick }) => {
 
   return (
     <div
-      className={`flex-shrink-0 w-72 rounded-lg ${
+      className={`flex-shrink-0 w-[362px] rounded-lg ${
         isDraggingOver ? "bg-opacity-70" : ""
       }`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      <div className="flex justify-between items-center p-2">
+      <div
+        className=" bg-[#F4F4F4] p-2 rounded-lg flex justify-between items-center;
+"
+      >
         <div className="flex gap-3">
-          <h2 className={`font-medium px-2 ${column.color}`}>{column.title}</h2>
-          <span className="text-gray-500">{column.tasks.length}</span>
+          <h2 className={`font-normal px-2`}>{column.title}</h2>
         </div>
         <div className="flex gap-3">
           <button className="text-gray-500 text-xl  hover:text-black">
-            ...
-          </button>
-          <button
-            onClick={() => setIsAddingTask(true)}
-            className="text-gray-500 text-xl hover:text-black"
-          >
-            +
+            <Ellipsis />
           </button>
         </div>
       </div>
-      <div className="space-y-2 p-2">
+      <div className="space-y-6 p-2 mt-2">
         {column.tasks.map((task) => (
           <Task
             key={task.id}
@@ -81,9 +78,9 @@ const Column = ({ column, onAddTask, onMoveTask, onTaskClick }) => {
       ) : (
         <button
           onClick={() => setIsAddingTask(true)}
-          className="w-full text-left rounded p-2 text-gray-500 hover:bg-gray-100"
+          className="w-full mt-4 h-[160px] text-center rounded-lg border border-dashed border-gray-400 p-2 font-normal hover:bg-gray-100"
         >
-          + New
+          + Add New Card
         </button>
       )}
     </div>
