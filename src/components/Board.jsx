@@ -128,6 +128,18 @@ const Board = () => {
         tasks: [...targetColumn.tasks, taskToMove],
       };
 
+      if (sourceColumn === targetColumn) {
+        return prevColumns.map((column) => {
+          if (column.id === targetColumnId) {
+            return {
+              ...column,
+              tasks: [...column.tasks],
+            };
+          }
+          return column;
+        });
+      }
+
       return prevColumns.map((column) => {
         if (column.id === sourceColumnId) return updatedSourceColumn;
         if (column.id === targetColumnId) return updatedTargetColumn;
