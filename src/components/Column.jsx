@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Task from "./Task";
 import { Ellipsis } from "lucide-react";
 
-const Column = ({ column, onAddTask, onMoveTask, onTaskClick }) => {
+const Column = ({ column, onAddTask, onMoveTask}) => {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
   const [isAddingTask, setIsAddingTask] = useState(false);
   const [newTaskTitle, setNewTaskTitle] = useState("");
@@ -60,7 +60,6 @@ const Column = ({ column, onAddTask, onMoveTask, onTaskClick }) => {
             key={task.id}
             task={task}
             sourceColumnId={column.id}
-            onTaskClick={onTaskClick}
           />
         ))}
       </div>
